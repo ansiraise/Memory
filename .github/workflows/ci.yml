@@ -30,7 +30,7 @@ jobs:
       - name: Run tests and generate Allure report
         run: mvn clean test allure:report --batch-mode
         env:
-          JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+          JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -Djava.util.logging.config.file=src/test/resources/logging.properties
           MAVEN_OPTS: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
 
       - name: Upload Allure Report
