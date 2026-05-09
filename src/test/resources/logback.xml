@@ -15,6 +15,10 @@
 
     <logger name="org.apache.hc" level="WARN"/>
     <logger name="org.apache.http" level="WARN"/>
+    <logger name="org.apache.hc" level="OFF"/>
+    <logger name="org.apache.http" level="OFF"/>
+    <logger name="org.apache.hc.client5.http.wire" level="OFF"/>
+    <logger name="org.apache.hc.client5.http.headers" level="OFF"/>
 
     <root level="info">
         <appender-ref ref="CONSOLE"/>
