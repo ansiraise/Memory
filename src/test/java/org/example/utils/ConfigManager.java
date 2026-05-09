@@ -16,75 +16,74 @@ public class ConfigManager {
     private static void loadProperties() {
         try {
             environment = System.getProperty("test.env", "dev");
-            System.out.println("=== Загружаем окружение: " + environment + " ===");
+            System.out.println("=== Loading environment: " + environment + " ===");
 
-            // Пробуем загрузить файл указанного окружения
+            // Try to load configuration file for the specified environment
             String configFile = "config/" + environment + ".properties";
             InputStream input = ConfigManager.class.getClassLoader()
                     .getResourceAsStream(configFile);
 
             if (input == null) {
-                // Если файл окружения не найден, пробуем dev
-                System.err.println("❌ Файл не найден: " + configFile);
-                System.err.println("⚠️ Пробуем загрузить config/dev.properties...");
+                // Environment file not found, try dev as fallback
+                System.err.println("❌ File not found: " + configFile);
+                System.err.println("⚠️ Trying to load config/dev.properties as fallback...");
 
                 input = ConfigManager.class.getClassLoader()
                         .getResourceAsStream("config/dev.properties");
 
                 if (input == null) {
-                    // Последняя попытка — искать в корне
-                    System.err.println("⚠️ Пробуем загрузить dev.properties из корня...");
+                    // Last attempt: try to find in root
+                    System.err.println("⚠️ Trying to load dev.properties from root...");
                     input = ConfigManager.class.getClassLoader()
                             .getResourceAsStream("dev.properties");
                 }
 
                 if (input == null) {
-                    System.err.println("❌ НЕ НАЙДЕН НИ ОДИН ФАЙЛ КОНФИГУРАЦИИ!");
-                    System.err.println("=== Содержимое classpath ===");
-                    // Выводим, что есть в classpath
+                    System.err.println("❌ NO CONFIGURATION FILE FOUND!");
+                    System.err.println("=== Classpath contents ===");
                     java.io.InputStream classpathCheck = ConfigManager.class.getClassLoader()
                             .getResourceAsStream(".");
                     if (classpathCheck == null) {
-                        System.err.println("classpath пуст или недоступен");
+                        System.err.println("classpath is empty or inaccessible");
                     }
                     isLoaded = false;
                     return;
                 }
 
-                System.out.println("✅ Используем dev.properties как fallback");
+                System.out.println("✅ Using dev.properties as fallback");
             }
 
             properties.load(input);
             input.close();
-            System.out.println("✅ Успешно загружено свойств: " + properties.size());
+            System.out.println("✅ Successfully loaded properties: " + properties.size());
             isLoaded = true;
 
         } catch (IOException e) {
-            System.err.println("❌ Ошибка при загрузке конфигурации: " + e.getMessage());
+            System.err.println("❌ Error loading configuration: " + e.getMessage());
             isLoaded = false;
         } catch (Exception e) {
-            System.err.println("❌ Неожиданная ошибка: " + e.getMessage());
+            System.err.println("❌ Unexpected error: " + e.getMessage());
             isLoaded = false;
         }
     }
 
-    // Общий метод для любого ключа
+    // Common method for any key
     public static String get(String key) {
         if (!isLoaded) {
             throw new RuntimeException(
-                    "❌ ConfigManager не загружен! Проверьте наличие файлов конфигурации в src/test/resources/config/"
+                    "❌ ConfigManager not loaded! Check configuration files in src/test/resources/config/"
             );
         }
         String value = properties.getProperty(key);
         if (value == null) {
             throw new RuntimeException(
-                    "❌ Ключ '" + key + "' не найден в конфигурации для окружения: " + environment
+                    "❌ Key '" + key + "' not found in configuration for environment: " + environment
             );
         }
         return value;
     }
 
-    // Удобные методы для конкретных настроек
+    // Convenience methods for specific settings
     public static String getBaseUrl() {
         return get("base.url");
     }
@@ -125,13 +124,13 @@ public class ConfigManager {
         return isLoaded;
     }
 
-    // Для отладки - показать все загруженные свойства
+    // For debugging - show all loaded properties
     public static void printAllProperties() {
         if (!isLoaded) {
-            System.err.println("Конфигурация не загружена, вывод невозможен");
+            System.err.println("Configuration not loaded, cannot display");
             return;
         }
-        System.out.println("=== Все свойства для окружения: " + environment + " ===");
+        System.out.println("=== All properties for environment: " + environment + " ===");
         properties.forEach((key, value) ->
                 System.out.println(key + " = " + value)
         );

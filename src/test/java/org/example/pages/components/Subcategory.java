@@ -30,7 +30,7 @@ public enum Subcategory {
         return subcategoryName;
     }
 
-    // Автоматически формируем ожидаемый заголовок
+    // Automatically generating the expected headline
     public String getExpectedTitle() {
         return categoryName + " - " + subcategoryName + " Products";
     }

@@ -41,13 +41,13 @@ public class PatternTest {
     @Test
     @Story("Проверка окружения")
     public void testEnvironment() {
-        System.out.println("=== Начало теста ===");
-        System.out.println("Окружение: " + ConfigManager.getCurrentEnvironment());
+        System.out.println("=== Test started ===");
+        System.out.println("Environment: " + ConfigManager.getCurrentEnvironment());
         System.out.println("Base URL: " + ConfigManager.getBaseUrl());
         System.out.println("Login path: " + ConfigManager.getLoginPath());
         System.out.println("Admin email: " + ConfigManager.getAdminEmail());
         System.out.println("Admin login: " + ConfigManager.getAdminLogin());
-        System.out.println("=== Конец теста ===");
+        System.out.println("=== Test finished ===");
     }
 
 }

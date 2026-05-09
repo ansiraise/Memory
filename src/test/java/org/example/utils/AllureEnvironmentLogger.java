@@ -40,7 +40,7 @@ public class AllureEnvironmentLogger {
                 log.info("Файлы allure.properties и environment.properties успешно созданы");
             }
         } catch (IOException e) {
-            log.error("Не удалось создать файлы для Allure", e);
+            log.error("Couldn't create files for Allure", e);
         }
     }
 }

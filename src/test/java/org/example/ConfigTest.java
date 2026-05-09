@@ -8,7 +8,7 @@ public class ConfigTest {
 
     @Test
     void testConfigLoaded() {
-        assertTrue(ConfigManager.isLoaded(), "Конфигурация должна быть загружена");
+        assertTrue(ConfigManager.isLoaded(), "Configuration must be loaded");
         System.out.println("Base URL: " + ConfigManager.getBaseUrl());
         System.out.println("Environment: " + ConfigManager.getCurrentEnvironment());
     }

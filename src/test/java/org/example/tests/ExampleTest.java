@@ -41,43 +41,43 @@ public class ExampleTest {
     @Test
     @Story("Проверка окружения")
     public void testEnvironment() {
-        System.out.println("=== Начало теста ===");
-        System.out.println("Окружение: " + ConfigManager.getCurrentEnvironment());
+        System.out.println("=== Test started ===");
+        System.out.println("Environment: " + ConfigManager.getCurrentEnvironment());
         System.out.println("Base URL: " + ConfigManager.getBaseUrl());
         System.out.println("Login path: " + ConfigManager.getLoginPath());
         System.out.println("Admin email: " + ConfigManager.getAdminEmail());
         System.out.println("Admin login: " + ConfigManager.getAdminLogin());
-        System.out.println("=== Конец теста ===");
+        System.out.println("=== Test finished ===");
     }
 
     @Test
     public void RegistrationDeleteRandomUser() {
-        log.info("=== Запуск теста: RegistrationDeleteRandomUser ===");
+        log.info("=== Test started: RegistrationDeleteRandomUser ===");
 
         NavigationBar navigationBar = new NavigationBar();
         LoginPage loginPage = navigationBar.clickSignupLoginBtn();
 
         TemporaryUser user = TemporaryUser.createRandom();
         user.accountFields();
-        log.info("Создан случайный пользователь: {} / {}", user.getEmail(), user.getPassword());
+        log.info("Random user created: {} / {}", user.getEmail(), user.getPassword());
 
         SignupPage signupPage = loginPage.signup(user.getName(), user.getEmail());
         signupPage.fillRegistrationForm(user);
         AccountCreatedPage accountCreated = signupPage.clickCreateAccountBtn();
 
-        log.info("Проверка сообщения об успешном создании аккаунта");
+        log.info("Checking account creation success message");
         assertEquals(accountCreated.getExpectedCreatedText(), accountCreated.getText(accountCreated.getAccountConfirm()));
 
         HomePage homePage = accountCreated.clickContinueBtn();
         DeleteAccountPage deleteAccount = navigationBar.clickDeleteAccountBtn();
 
-        log.info("Проверка сообщения об удалении аккаунта");
+        log.info("Checking account deletion success message");
         assertEquals(deleteAccount.getExpectedDeletedText(), deleteAccount.getText(deleteAccount.getAccountDeletedText()));
 
         deleteAccount.clickContinueBtn();
         assertEquals(ConfigManager.getBaseUrl() + "/", homePage.getCurrentUrl());
 
-        log.info("=== Тест RegistrationDeleteRandomUser успешно завершен ===");
+        log.info("=== Test RegistrationDeleteRandomUser completed successfully ===");
     }
 
     @Test
@@ -151,20 +151,20 @@ public class ExampleTest {
     @Story("Пользователь подписывается на рассылку")
     @Severity(SeverityLevel.MINOR)
     public void Subscription() {
-        log.info("Запуск теста");
-        log.info("Открываем главную страницу");
+        log.info("Test started");
+        log.info("Opening main page");
         NavigationBar navigationBar = new NavigationBar();
-        log.info("Вводим почту администратора");
+        log.info("Entering admin email");
         navigationBar.fillEmailSubscription(ConfigManager.getAdminEmail());
-        log.info("Нажимаем кнопку подписки");
+        log.info("Clicking subscribe button");
         navigationBar.clickSubscriptionBtn();
 
         String expected = navigationBar.getSuccessSubscribedText();
         String actual = navigationBar.getText(navigationBar.getAlertText());
 
-        log.info("Проверка сообщения подписки. Ожидаем: {}", expected);
+        log.info("Checking subscription message. Expected: {}", expected);
         assertEquals(expected, actual);
-        log.info("Подписка успешна: {}", expected);
+        log.info("Subscription successful: {}", expected);
     }
 
     @Test

@@ -24,7 +24,7 @@ public class ScreenshotHelper {
     public static void captureScreenshot(String testName) {
         WebDriver driver = DriverSingleton.getDriver();
         if (driver == null) {
-            System.err.println("Драйвер не инициализирован, скриншот невозможен");
+            System.err.println("The driver has not been initialized, and a screenshot is not possible.");
             return;
         }
 
@@ -56,10 +56,10 @@ public class ScreenshotHelper {
             Path destination = directory.resolve(fileName);
             Files.copy(screenshot.toPath(), destination);
 
-            System.out.println("✅ Скриншот сохранен на диск: " + destination.toAbsolutePath());
+            System.out.println("✅ Screenshot saved to disk: " + destination.toAbsolutePath());
             return destination.toString();
         } catch (Exception e) {
-            System.err.println("❌ Ошибка при сохранении на диск: " + e.getMessage());
+            System.err.println("❌ Error when saving to disk: " + e.getMessage());
             return null;
         }
     }
@@ -77,9 +77,9 @@ public class ScreenshotHelper {
                     .forEach(path -> {
                         try {
                             Files.delete(path);
-                            System.out.println("Удален старый скриншот: " + path.getFileName());
+                            System.out.println("he old screenshot was deleted: " + path.getFileName());
                         } catch (IOException e) {
-                            System.err.println("Не удалось удалить: " + path.getFileName());
+                            System.err.println("Couldn't delete: " + path.getFileName());
                         }
                     });
         }

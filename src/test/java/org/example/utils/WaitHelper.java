@@ -154,9 +154,9 @@ public class WaitHelper {
             robot.keyPress(KeyEvent.VK_ENTER);
             robot.keyRelease(KeyEvent.VK_ENTER);
 
-            System.out.println("Попап закрыт через Robot");
+            System.out.println("The pop-up is closed via Robot");
         } catch (Exception e) {
-            System.out.println("Не удалось закрыть попап: " + e.getMessage());
+            System.out.println("Couldn't close the pop-up: " + e.getMessage());
         }
     }
 

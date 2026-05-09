@@ -26,7 +26,7 @@ public class TemporaryUser {
         this.email = email;
     }
 
-    // метод - создает случайного пользователя
+    // method - create random user
     public static TemporaryUser createRandom() {
         String uniqueId = UUID.randomUUID().toString().substring(0, 8);
         String name = "Random_" + uniqueId;
@@ -35,7 +35,7 @@ public class TemporaryUser {
         return new TemporaryUser(name, email);
     }
 
-    // ОТДЕЛЬНЫЙ метод для заполнения остальных полей
+    // A SEPARATE method for filling in the remaining fields
     public TemporaryUser accountFields() {
         this.password = "Test123!";
         this.firstName = "John";
@@ -54,7 +54,7 @@ public class TemporaryUser {
         return this;
     }
 
-    // Геттеры
+    // Getters
     public String getName() { return name; }
     public String getEmail() { return email; }
 
