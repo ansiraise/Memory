@@ -1,0 +1,37 @@
+{
+  "categories": [
+    {
+      "name": "✅ Успешные тесты",
+      "matchedStatuses": ["passed"]
+    },
+    {
+      "name": "❌ Ошибка подписки",
+      "matchedStatuses": ["failed"],
+      "messageRegex": "You have been successfully subscribed"
+    },
+    {
+      "name": "❌ Ошибка создания/удаления аккаунта",
+      "matchedStatuses": ["failed"],
+      "messageRegex": "Account Created|Account Deleted"
+    },
+    {
+      "name": "🐛 Элемент не найден (Selenium)",
+      "matchedStatuses": ["broken"],
+      "traceRegex": "NoSuchElementException"
+    },
+    {
+      "name": "🐛 Таймаут ожидания",
+      "matchedStatuses": ["broken"],
+      "traceRegex": "TimeoutException|ElementNotVisibleException"
+    },
+    {
+      "name": "🔌 Проблема с подключением",
+      "matchedStatuses": ["broken"],
+      "traceRegex": "ConnectException|SocketTimeoutException"
+    },
+    {
+      "name": "💥 Другие ошибки в тестах",
+      "matchedStatuses": ["failed", "broken"]
+    }
+  ]
+}

@@ -1,0 +1,298 @@
+2026-05-06 16:44:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 16:44:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 16:44:13 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 16:44:13 [main] INFO  org.example.tests.ExampleTest - Open mainPage
+2026-05-06 16:44:13 [main] INFO  org.example.tests.ExampleTest - Enter admin email
+2026-05-06 16:44:13 [main] INFO  org.example.tests.ExampleTest - Test successfully completed
+2026-05-06 16:46:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 16:46:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 16:46:31 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 16:46:31 [main] INFO  org.example.tests.ExampleTest - Open mainPage
+2026-05-06 16:46:31 [main] INFO  org.example.tests.ExampleTest - Enter admin email
+2026-05-06 16:46:31 [main] INFO  org.example.tests.ExampleTest - Test successfully completed
+2026-05-06 17:08:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:08:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:08:36 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:08:36 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:08:36 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:08:37 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:08:37 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:08:37 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:11:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:11:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:11:32 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:11:32 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:11:32 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:11:32 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:11:32 [main] ERROR org.example.tests.ExampleTest - Ошибка подписки. Ожидалось: 'You have been successfully subscribeи!', Получено: 'You have been successfully subscribed!'
+2026-05-06 17:11:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:11:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:16:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:16:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:16:22 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:16:22 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:16:22 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:16:22 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:16:22 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-06 17:26:31 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:26:31 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-06 17:26:36 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-06 17:32:53 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:32:53 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:32:58 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:32:58 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:32:58 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:32:58 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:32:58 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-06 17:32:58 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:32:58 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:37:55 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:37:55 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:38:00 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:38:00 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:38:00 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:38:00 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:38:00 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-06 17:38:01 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:38:01 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:49:34 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:49:34 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:49:39 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:49:39 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:49:39 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:49:39 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:49:39 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-06 17:49:39 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:49:39 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:53:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 17:53:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 17:53:37 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 17:53:37 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 17:53:37 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 17:53:37 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 17:53:37 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-06 22:15:21 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-06 22:15:21 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-06 22:15:26 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-06 22:15:26 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-06 22:15:26 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-06 22:15:26 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-06 22:15:26 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:05:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:05:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:05:12 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:05:12 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:05:12 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:05:12 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:05:12 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:33:49 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:33:49 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:33:54 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:33:54 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:33:54 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:33:54 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:33:54 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:36:59 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:36:59 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:37:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:37:32 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:37:41 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:37:41 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:37:50 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:37:50 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:37:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:37:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:38:00 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:38:00 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:38:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:38:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:38:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:38:27 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:38:36 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:38:36 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:13 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:13 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:17 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:39:17 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:39:17 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:39:17 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:39:17 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:39:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:26 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:26 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:35 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:35 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:47 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:47 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:39:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:39:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:40:05 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:40:05 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:40:14 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:40:14 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:46:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:46:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:47:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:47:56 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:48:01 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:48:01 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:48:01 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:48:01 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:48:01 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:52:57 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:52:57 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:53:02 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:53:02 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:53:02 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:53:03 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:53:03 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:55:00 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:55:00 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 00:55:05 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 00:55:05 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 00:55:05 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 00:55:05 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 00:55:05 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-07 00:57:18 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 00:57:18 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 01:30:52 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-07 01:30:52 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-07 01:30:57 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-07 01:30:57 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-07 01:30:57 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-07 01:30:57 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-07 01:30:57 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed1!
+2026-05-09 14:51:47 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 14:51:47 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 14:51:53 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:05:25 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файл environment.properties успешно создан
+2026-05-09 15:05:26 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:05:26 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:05:30 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:11:43 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файл environment.properties успешно создан
+2026-05-09 15:11:44 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:11:44 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:11:49 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:12:55 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:12:55 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:12:59 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:12:59 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:12:59 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:12:59 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:13:00 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:13:00 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:14:51 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:14:51 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:14:55 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:16:31 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файл environment.properties успешно создан
+2026-05-09 15:16:31 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:16:31 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:16:36 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:26:21 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файл environment.properties успешно создан
+2026-05-09 15:26:21 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:26:21 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:26:26 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:40:37 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файлы allure.properties и environment.properties успешно созданы
+2026-05-09 15:40:37 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:40:37 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:40:41 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:40:41 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:40:41 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:40:42 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:40:42 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:40:42 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:45:40 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файлы allure.properties и environment.properties успешно созданы
+2026-05-09 15:45:41 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:45:41 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 15:45:45 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 15:53:27 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файлы allure.properties и environment.properties успешно созданы
+2026-05-09 15:53:28 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 15:53:28 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:02:58 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файлы allure.properties и environment.properties успешно созданы
+2026-05-09 17:03:15 [main] INFO  o.e.utils.AllureEnvironmentLogger - Файлы allure.properties и environment.properties успешно созданы
+2026-05-09 17:03:16 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:03:16 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:03:48 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:03:48 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:03:57 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:03:57 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:07 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:13 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:13 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:17 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:21 [main] INFO  org.example.tests.ExampleTest - === Запуск теста: RegistrationDeleteRandomUser ===
+2026-05-09 17:04:23 [main] INFO  org.example.tests.ExampleTest - Создан случайный пользователь: random_f07cd69d@test.com / Test123!
+2026-05-09 17:04:26 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения об успешном создании аккаунта
+2026-05-09 17:04:34 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения об удалении аккаунта
+2026-05-09 17:04:36 [main] INFO  org.example.tests.ExampleTest - === Тест RegistrationDeleteRandomUser успешно завершен ===
+2026-05-09 17:04:36 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:36 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:43 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:43 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:04:52 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:04:52 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:05:29 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:05:29 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Запуск теста
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Открываем главную страницу
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Вводим почту администратора
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Нажимаем кнопку подписки
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Проверка сообщения подписки. Ожидаем: You have been successfully subscribed!
+2026-05-09 17:05:33 [main] INFO  org.example.tests.ExampleTest - Подписка успешна: You have been successfully subscribed!
+2026-05-09 17:05:33 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:05:33 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:05:42 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:05:42 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:05:51 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:05:51 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:06:02 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:06:02 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:06:12 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:06:12 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:06:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:06:20 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
+2026-05-09 17:06:29 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Using chromedriver 147.0.7727.117 (resolved driver for Chrome 147)
+2026-05-09 17:06:29 [main] INFO  i.g.bonigarcia.wdm.WebDriverManager - Exporting webdriver.chrome.driver as C:\Users\user\.cache\selenium\chromedriver\win64\147.0.7727.117\chromedriver.exe
