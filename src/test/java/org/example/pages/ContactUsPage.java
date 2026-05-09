@@ -9,6 +9,12 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import io.qameta.allure.Step;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+
 /**
  * Страница "Contact Us" (Связь с нами)
  * Содержит методы для заполнения формы обратной связи,
@@ -76,9 +82,21 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Загрузить тестовый файл")
     public void uploadTestFile() {
-        ClassLoader classLoader = getClass().getClassLoader();
-        String filePath = classLoader.getResource("testdata/text.txt").getPath();
-        uploadFile(filePath);
+        try (InputStream inputStream = getClass().getClassLoader()
+                .getResourceAsStream("testdata/text.txt")) {
+
+            if (inputStream == null) {
+                throw new RuntimeException("File testdata/text.txt not found in classpath");
+            }
+
+            Path tempFile = Files.createTempFile("upload", ".txt");
+            Files.copy(inputStream, tempFile, StandardCopyOption.REPLACE_EXISTING);
+            uploadFile(tempFile.toString());
+            tempFile.toFile().deleteOnExit();
+
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load test file", e);
+        }
     }
 
     /**
