@@ -1,27 +1,17 @@
 <configuration>
+    <!-- Пакеты, которые спамят (Apache HC и WebDriverManager) -->
+    <logger name="org.apache.hc" level="WARN"/>
+    <logger name="org.apache.http" level="WARN"/>
+    <logger name="io.github.bonigarcia.wdm" level="INFO"/>
+
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
             <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
 
-    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>logs/test.log</file>
-        <append>true</append>
-        <encoder>
-            <pattern>%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
-        </encoder>
-    </appender>
-
-    <logger name="org.apache.hc" level="WARN"/>
-    <logger name="org.apache.http" level="WARN"/>
-    <logger name="org.apache.hc" level="OFF"/>
-    <logger name="org.apache.http" level="OFF"/>
-    <logger name="org.apache.hc.client5.http.wire" level="OFF"/>
-    <logger name="org.apache.hc.client5.http.headers" level="OFF"/>
-
-    <root level="info">
+    <!-- Root логгер оставляем в INFO, чтобы видеть свои логи -->
+    <root level="INFO">
         <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="FILE"/>
     </root>
 </configuration>
