@@ -76,7 +76,9 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Загрузить тестовый файл")
     public void uploadTestFile() {
-        uploadFile(TestData.UPLOAD_FILE_PATH);
+        ClassLoader classLoader = getClass().getClassLoader();
+        String filePath = classLoader.getResource("testdata/text.txt").getPath();
+        uploadFile(filePath);
     }
 
     /**
