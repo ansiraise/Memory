@@ -29,6 +29,8 @@ jobs:
 
       - name: Run tests with Maven
         run: mvn clean test
+        env:
+          JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
 
       - name: Generate Allure Report
         run: mvn allure:report
