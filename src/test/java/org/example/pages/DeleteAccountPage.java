@@ -1,6 +1,5 @@
 package org.example.pages;
 
-import org.example.DriverSingleton;
 import org.openqa.selenium.By;
 import io.qameta.allure.Step;
 
@@ -10,8 +9,8 @@ import io.qameta.allure.Step;
  */
 public class DeleteAccountPage extends BasePage {
 
-    private By continueBtn = By.xpath("//a[text()='Continue']");
-    private By accountDeletedText = By.xpath("//b[text()='Account Deleted!']");
+    private final By continueBtnLocator = By.xpath("//a[text()='Continue']");
+    private final By accountDeletedMsgLocator = By.xpath("//b[text()='Account Deleted!']");
 
     /**
      * Нажатие кнопки Continue после удаления аккаунта
@@ -19,7 +18,7 @@ public class DeleteAccountPage extends BasePage {
      */
     @Step("Нажать кнопку Continue на странице удаления аккаунта")
     public HomePage clickContinueBtn() {
-        click(continueBtn);
+        click(continueBtnLocator);
         return new HomePage();
     }
 
@@ -37,6 +36,6 @@ public class DeleteAccountPage extends BasePage {
      */
     @Step("Получить локатор сообщения об удалении аккаунта")
     public By getAccountDeletedText() {
-        return accountDeletedText;
+        return accountDeletedMsgLocator;
     }
 }

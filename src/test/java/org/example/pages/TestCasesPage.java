@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class TestCasesPage {
 
-    private By testCasesHeading = By.xpath("//div[@class='panel-heading']");
+    private final By testCasesHeadingLocator = By.xpath("//div[@class='panel-heading']");
 
     /**
      * Получение списка всех элементов тестовых кейсов на странице
@@ -21,7 +21,7 @@ public class TestCasesPage {
      */
     @Step("Получить список всех тестовых кейсов")
     public List<WebElement> getListTestCases() {
-        return DriverSingleton.getDriver().findElements(testCasesHeading);
+        return DriverSingleton.getDriver().findElements(testCasesHeadingLocator);
     }
 
     /**

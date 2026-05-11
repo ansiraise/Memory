@@ -1,20 +1,19 @@
 package org.example.pages;
 
 import io.qameta.allure.Step;
-import org.example.DriverSingleton;
 import org.example.utils.WaitHelper;
 import org.openqa.selenium.By;
 
 public class LoginPage extends BasePage {
 
-    private By emailLoginField = By.xpath("//input[@data-qa='login-email']");
-    private By passwordLoginField = By.xpath("//input[@data-qa='login-password']");
-    private By nameSignupField = By.xpath("//input[@data-qa='signup-name']");
-    private By emailSignupField = By.xpath("//input[contains(@data-qa,'signup-email')]");
-    private By loginBtn = By.xpath("//button[text()='Login']");
-    private By signupBtn = By.xpath("//button[text()='Signup']");
-    private By errorCredentials = By.xpath("//p[text()='Your email or password is incorrect!']");
-    private By errorSignup = By.xpath("//p[text()='Email Address already exist!']");
+    private final By emailLoginFieldLocator = By.xpath("//input[@data-qa='login-email']");
+    private final By passwordLoginFieldLocator = By.xpath("//input[@data-qa='login-password']");
+    private final By nameSignupFieldLocator = By.xpath("//input[@data-qa='signup-name']");
+    private final By emailSignupFieldLocator = By.xpath("//input[contains(@data-qa,'signup-email')]");
+    private final By loginBtnLocator = By.xpath("//button[text()='Login']");
+    private final By signupBtnLocator = By.xpath("//button[text()='Signup']");
+    private final By errorCredentialsLocator = By.xpath("//p[text()='Your email or password is incorrect!']");
+    private final By errorSignupLocator = By.xpath("//p[text()='Email Address already exist!']");
 
 
 
@@ -27,7 +26,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Ввести email: {email}")
     public void enterEmail(String email) {
-        sendKeys(emailLoginField, email);
+        sendKeys(emailLoginFieldLocator, email);
     }
 
     /**
@@ -36,7 +35,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Ввести пароль")
     public void enterPassword(String password) {
-        sendKeys(passwordLoginField, password);
+        sendKeys(passwordLoginFieldLocator, password);
     }
 
     /**
@@ -45,7 +44,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Нажать кнопку Login")
     public HomePage clickLogin() {
-        click(loginBtn);
+        click(loginBtnLocator);
         WaitHelper.waitForPageLoad();
         return new HomePage();
     }
@@ -58,9 +57,10 @@ public class LoginPage extends BasePage {
      */
     @Step("Выполнить логин с email: {email}")
     public HomePage login(String email, String password) {
-        sendKeys(emailLoginField, email);
-        sendKeys(passwordLoginField, password);
-        return clickLogin();
+        enterEmail(email);
+        enterPassword(password);
+        clickLogin();
+        return new HomePage();
     }
 
     /**
@@ -69,7 +69,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Ввести имя для регистрации: {name}")
     public void enterName(String name) {
-        sendKeys(nameSignupField, name);
+        sendKeys(nameSignupFieldLocator, name);
     }
 
     /**
@@ -78,7 +78,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Ввести email для регистрации: {email}")
     public void enterEmailSignup(String email) {
-        sendKeys(emailSignupField, email);
+        sendKeys(emailSignupFieldLocator, email);
     }
 
     /**
@@ -87,7 +87,7 @@ public class LoginPage extends BasePage {
      */
     @Step("Нажать кнопку Signup")
     public SignupPage clickSignup() {
-        click(signupBtn);
+        click(signupBtnLocator);
         return new SignupPage();
     }
 
@@ -99,8 +99,8 @@ public class LoginPage extends BasePage {
      */
     @Step("Заполнить форму регистрации (имя: {name}, email: {email})")
     public SignupPage signup(String name, String email) {
-        sendKeys(nameSignupField, name);
-        sendKeys(emailSignupField, email);
+        enterName(name);
+        enterEmailSignup(email);
         return clickSignup();
     }
 
@@ -109,7 +109,7 @@ public class LoginPage extends BasePage {
      * @return локатор errorCredentials
      */
     public By getErrorCredentials() {
-        return errorCredentials;
+        return errorCredentialsLocator;
     }
 
     /**
@@ -117,7 +117,7 @@ public class LoginPage extends BasePage {
      * @return локатор errorSignup
      */
     public By getErrorSignup() {
-        return errorSignup;
+        return errorSignupLocator;
     }
 
     /**

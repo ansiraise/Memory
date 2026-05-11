@@ -1,7 +1,6 @@
 package org.example.pages;
 
 import org.openqa.selenium.By;
-import org.example.DriverSingleton;
 import io.qameta.allure.Step;
 
 /**
@@ -10,8 +9,8 @@ import io.qameta.allure.Step;
  */
 public class CheckOutPage extends BasePage {
 
-    private By placeOrderBtn = By.xpath("//a[@href='/payment']");
-    private By commentArea = By.xpath("//textarea[@name='message']");
+    private final By placeOrderBtnLocator = By.xpath("//a[@href='/payment']");
+    private final By commentAreaLocator = By.xpath("//textarea[@name='message']");
 
     /**
      * Добавление комментария к заказу
@@ -19,7 +18,7 @@ public class CheckOutPage extends BasePage {
      */
     @Step("Добавить комментарий к заказу: '{text}'")
     public void addComment(String text) {
-        sendKeys(commentArea, text);
+        sendKeys(commentAreaLocator, text);
     }
 
     /**
@@ -28,7 +27,7 @@ public class CheckOutPage extends BasePage {
      */
     @Step("Нажать кнопку 'Place Order'")
     public PaymentPage clickPlaceOrderBtn() {
-        click(placeOrderBtn);
+        click(placeOrderBtnLocator);
         return new PaymentPage();
     }
 }

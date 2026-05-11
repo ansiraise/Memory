@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class HomePage extends BasePage {
 
-    private By addToCartBtn = By.xpath("//div[contains(@class, 'productinfo')]//a[text()='Add to cart']");
+    private final By addToCartBtnLocator = By.xpath("//div[contains(@class, 'productinfo')]//a[text()='Add to cart']");
 
     /**
      * Добавление товара в корзину по индексу
@@ -23,7 +23,7 @@ public class HomePage extends BasePage {
      */
     @Step("Добавить товар в корзину (индекс: {productIndex})")
     public void clickAddToCartBtn(int productIndex) {
-        List<WebElement> products = DriverSingleton.getDriver().findElements(addToCartBtn);
+        List<WebElement> products = DriverSingleton.getDriver().findElements(addToCartBtnLocator);
         if (products.size() > productIndex) {
             products.get(productIndex).click();
         }

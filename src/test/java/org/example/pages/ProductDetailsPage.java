@@ -2,7 +2,6 @@ package org.example.pages;
 
 import org.example.DriverSingleton;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import io.qameta.allure.Step;
 
@@ -13,14 +12,14 @@ import io.qameta.allure.Step;
  */
 public class ProductDetailsPage extends BasePage {
 
-    private By productName = By.xpath("//div[@class='product-information']/h2");
-    private By productCategory = By.xpath("//p[contains(.,'Category:')]");
-    private By productPrice = By.xpath("//div[@class='product-information']//span[contains(text(), 'Rs.')]");
-    private By productAvailability = By.xpath("//p[contains(.,'Availability:')]");
-    private By productCondition = By.xpath("//p[contains(.,'Condition:')]");
-    private By productBrand = By.xpath("//p[contains(.,'Brand:')]");
-    private By productQuantity = By.xpath("//input[@id='quantity']");
-    private By addToCartBtn = By.xpath("//button[contains(normalize-space(), 'Add to cart')]"); // normalize-space() убирает лишние пробелы и переносы
+    private final By productNameLocator = By.xpath("//div[@class='product-information']/h2");
+    private final By productCategoryLocator = By.xpath("//p[contains(.,'Category:')]");
+    private final By productPriceLocator = By.xpath("//div[@class='product-information']//span[contains(text(), 'Rs.')]");
+    private final By productAvailabilityLocator = By.xpath("//p[contains(.,'Availability:')]");
+    private final By productConditionLocator = By.xpath("//p[contains(.,'Condition:')]");
+    private final By productBrandLocator = By.xpath("//p[contains(.,'Brand:')]");
+    private final By productQuantityLocator = By.xpath("//input[@id='quantity']");
+    private final By addToCartBtnLocator = By.xpath("//button[contains(normalize-space(), 'Add to cart')]"); // normalize-space() убирает лишние пробелы и переносы
 
     /**
      * Получение локатора названия товара
@@ -28,7 +27,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор названия товара")
     public By getProductName() {
-        return productName;
+        return productNameLocator;
     }
 
     /**
@@ -37,7 +36,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор категории товара")
     public By getProductCategory() {
-        return productCategory;
+        return productCategoryLocator;
     }
 
     /**
@@ -46,7 +45,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор цены товара")
     public By getProductPrice() {
-        return productPrice;
+        return productPriceLocator;
     }
 
     /**
@@ -55,7 +54,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор информации о наличии товара")
     public By getProductAvailability() {
-        return productAvailability;
+        return productAvailabilityLocator;
     }
 
     /**
@@ -64,7 +63,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор состояния товара")
     public By getProductCondition() {
-        return productCondition;
+        return productConditionLocator;
     }
 
     /**
@@ -73,7 +72,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить локатор бренда товара")
     public By getProductBrand() {
-        return productBrand;
+        return productBrandLocator;
     }
 
     /**
@@ -82,12 +81,12 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Проверить отображение всех деталей товара")
     public boolean isAllProductDetailsDisplayed() {
-        return isDisplayed(productName) &&
-                isDisplayed(productCategory) &&
-                isDisplayed(productPrice) &&
-                isDisplayed(productAvailability) &&
-                isDisplayed(productCondition) &&
-                isDisplayed(productBrand);
+        return isDisplayed(productNameLocator) &&
+                isDisplayed(productCategoryLocator) &&
+                isDisplayed(productPriceLocator) &&
+                isDisplayed(productAvailabilityLocator) &&
+                isDisplayed(productConditionLocator) &&
+                isDisplayed(productBrandLocator);
     }
 
     /**
@@ -107,7 +106,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Получить текущее количество товара")
     public int getCurrentQuantity() {
-        String value = DriverSingleton.getDriver().findElement(productQuantity)
+        String value = DriverSingleton.getDriver().findElement(productQuantityLocator)
                 .getAttribute("value");
         return Integer.parseInt(value);
     }
@@ -118,7 +117,7 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Установить количество товара: {quantity}")
     public void setQuantity(int quantity) {
-        WebElement quantityInput = DriverSingleton.getDriver().findElement(productQuantity);
+        WebElement quantityInput = DriverSingleton.getDriver().findElement(productQuantityLocator);
         quantityInput.clear();
         quantityInput.sendKeys(String.valueOf(quantity));
     }
@@ -128,6 +127,6 @@ public class ProductDetailsPage extends BasePage {
      */
     @Step("Нажать кнопку 'Add to cart' на странице товара")
     public void clickAddToCartBtn() {
-        click(addToCartBtn);
+        click(addToCartBtnLocator);
     }
 }

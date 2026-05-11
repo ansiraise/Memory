@@ -1,11 +1,8 @@
 package org.example.pages;
 
 import org.example.DriverSingleton;
-import org.example.utils.TestData;
-import org.example.utils.WaitHelper;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import io.qameta.allure.Step;
 
@@ -22,14 +19,14 @@ import java.nio.file.StandardCopyOption;
  */
 public class ContactUsPage extends BasePage {
 
-    private By nameField = By.xpath("//input[@data-qa='name']");
-    private By emailField = By.xpath("//input[@data-qa='email']");
-    private By subjectField = By.xpath("//input[@data-qa='subject']");
-    private By messageField = By.xpath("//textarea[@id='message']");
-    private By submitBtn = By.xpath("//input[@type='submit']");
-    private By browseBtn = By.xpath("//input[@type='file']");
-    private By allertSuccesText = By.xpath("//div[@class='status alert alert-success']");
-    private By homeBtn = By.xpath("//span[contains(.,'Home')]");
+    private final By nameFieldLocator = By.xpath("//input[@data-qa='name']");
+    private final By emailFieldLocator = By.xpath("//input[@data-qa='email']");
+    private final By subjectFieldLocator = By.xpath("//input[@data-qa='subject']");
+    private final By messageFieldLocator = By.xpath("//textarea[@id='message']");
+    private final By submitBtnLocator = By.xpath("//input[@type='submit']");
+    private final By browseBtnLocator = By.xpath("//input[@type='file']");
+    private final By alertSuccessMsgLocator = By.xpath("//div[@class='status alert alert-success']");
+    private final By homeBtnLocator = By.xpath("//span[contains(.,'Home')]");
 
     /**
      * Ввод имени в поле Name
@@ -37,7 +34,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Ввести имя: {name}")
     public void enterName(String name) {
-        sendKeys(nameField, name);
+        sendKeys(nameFieldLocator, name);
     }
 
     /**
@@ -46,7 +43,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Ввести email: {email}")
     public void enterEmail(String email) {
-        sendKeys(emailField, email);
+        sendKeys(emailFieldLocator, email);
     }
 
     /**
@@ -55,7 +52,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Ввести тему: {subject}")
     public void enterSubject(String subject) {
-        sendKeys(subjectField, subject);
+        sendKeys(subjectFieldLocator, subject);
     }
 
     /**
@@ -64,7 +61,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Ввести сообщение: {message}")
     public void enterMessage(String message) {
-        sendKeys(messageField, message);
+        sendKeys(messageFieldLocator, message);
     }
 
     /**
@@ -73,7 +70,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Загрузить файл: {filePath}")
     public void uploadFile(String filePath) {
-        WebElement fileInput = DriverSingleton.getDriver().findElement(browseBtn);
+        WebElement fileInput = DriverSingleton.getDriver().findElement(browseBtnLocator);
         fileInput.sendKeys(filePath);
     }
 
@@ -104,7 +101,7 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Нажать кнопку Submit")
     public void clickSubmitBtn() {
-        clickWithJs(submitBtn);
+        clickWithJs(submitBtnLocator);
     }
 
     /**
@@ -131,12 +128,12 @@ public class ContactUsPage extends BasePage {
      */
     @Step("Нажать кнопку Home")
     public HomePage clickHomeBtn() {
-        click(homeBtn);
+        click(homeBtnLocator);
         return new HomePage();
     }
 
     @Step("Получить текст сообщения об успешной отправке")
     public String getSuccessMessageText() {
-        return getText(allertSuccesText);
+        return getText(alertSuccessMsgLocator);
     }
 }

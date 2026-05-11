@@ -8,10 +8,12 @@ public class Navigation {
         DriverSingleton.getDriver().get(ConfigManager.getBaseUrl());
     }
 
+    @Step("Open Login page")
     public static void openLoginPage() {
         DriverSingleton.getDriver().get(ConfigManager.getBaseUrl() + ConfigManager.getLoginPath());
     }
 
+    @Step("Open ContactUs page")
     public static void openContactUsPage() {
         DriverSingleton.getDriver().get(ConfigManager.getBaseUrl() + ConfigManager.getContactUsPath());
     }

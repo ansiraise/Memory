@@ -7,13 +7,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.example.DriverSingleton;
-
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
-
 import java.awt.Robot;
-import java.awt.event.KeyEvent;
 
 public class WaitHelper {
 

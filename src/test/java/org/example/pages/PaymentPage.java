@@ -1,14 +1,7 @@
 package org.example.pages;
 
-import org.example.utils.WaitHelper;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import io.qameta.allure.Step;
-
-import java.time.Duration;
 
 /**
  * Страница ввода платёжных данных (Payment Page)
@@ -16,13 +9,13 @@ import java.time.Duration;
  */
 public class PaymentPage extends BasePage {
 
-    private By nameOfCardField = By.xpath("//input[@name='name_on_card']");
-    private By cardNumberField = By.xpath("//input[@name='card_number']");
-    private By cvcField = By.xpath("//input[@name='cvc']");
-    private By expirationMonthField = By.xpath("//input[@name='expiry_month']");
-    private By expiratonYearField = By.xpath("//input[@name='expiry_year']");
-    private By confirmOrderBtn = By.xpath("//button[@id='submit']");
-    private By successAlert = By.xpath("//div[@id='success_message']//*[contains(text(), 'Your order has been placed successfully!')]");
+    private final By cardNameFieldLocator = By.xpath("//input[@name='name_on_card']");
+    private final By cardNumberFieldLocator = By.xpath("//input[@name='card_number']");
+    private final By cvcFieldLocator = By.xpath("//input[@name='cvc']");
+    private final By expirationMonthFieldLocator = By.xpath("//input[@name='expiry_month']");
+    private final By expirationYearFieldLocator = By.xpath("//input[@name='expiry_year']");
+    private final By confirmOrderBtnLocator = By.xpath("//button[@id='submit']");
+    private final By orderSuccessAlertLocator = By.xpath("//div[@id='success_message']//*[contains(text(), 'Your order has been placed successfully!')]");
 
     /**
      * Ввод имени владельца карты
@@ -30,7 +23,7 @@ public class PaymentPage extends BasePage {
      */
     @Step("Ввести имя владельца карты: {name}")
     public void enterCardName(String name) {
-        sendKeys(nameOfCardField, name);
+        sendKeys(cardNameFieldLocator, name);
     }
 
     /**
@@ -39,7 +32,7 @@ public class PaymentPage extends BasePage {
      */
     @Step("Ввести номер карты: {number}")
     public void enterCardNumber(String number) {
-        sendKeys(cardNumberField, number);
+        sendKeys(cardNumberFieldLocator, number);
     }
 
     /**
@@ -48,16 +41,16 @@ public class PaymentPage extends BasePage {
      */
     @Step("Ввести CVC код: {cvc}")
     public void enterCVC(String cvc) {
-        sendKeys(cvcField, cvc);
+        sendKeys(cvcFieldLocator, cvc);
     }
 
     /**
-     * Ввод месяца истечения срока действия карты
+     * Ввод месяца, когда истечет срока действия карты
      * @param month в формате MM
      */
     @Step("Ввести месяц истечения срока: {month}")
     public void enterMonth(String month) {
-        sendKeys(expirationMonthField, month);
+        sendKeys(expirationMonthFieldLocator, month);
     }
 
     /**
@@ -66,7 +59,7 @@ public class PaymentPage extends BasePage {
      */
     @Step("Ввести год истечения срока: {year}")
     public void enterYear(String year) {
-        sendKeys(expiratonYearField, year);
+        sendKeys(expirationYearFieldLocator, year);
     }
 
     /**
@@ -75,7 +68,7 @@ public class PaymentPage extends BasePage {
      */
     @Step("Нажать кнопку подтверждения заказа")
     public PaymentDonePage clickConfirmOrder() {
-        click(confirmOrderBtn);
+        click(confirmOrderBtnLocator);
         return new PaymentDonePage();
     }
 

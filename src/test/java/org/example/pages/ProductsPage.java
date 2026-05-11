@@ -17,12 +17,12 @@ import java.util.List;
  */
 public class ProductsPage extends BasePage {
 
-    private By viewProductBtn = By.xpath("//a[contains(@href, '/product_details/')]");
-    private By productNames = By.xpath("//div[@class='productinfo text-center']//p");
-    private By searchField = By.xpath("//input[@id='search_product']");
-    private By searchButton = By.xpath("//button[@id='submit_search']");
-    private By addToCartBtn = By.xpath("//div[@class='productinfo text-center']//a[text()='Add to cart']");
-    private By titleLocator = By.xpath("//h2[contains(@class,'title')]");
+    private final By viewProductBtnLocator = By.xpath("//a[contains(@href, '/product_details/')]");
+    private final By productNamesLocator = By.xpath("//div[@class='productinfo text-center']//p");
+    private final By searchFieldLocator = By.xpath("//input[@id='search_product']");
+    private final By searchButtonLocator = By.xpath("//button[@id='submit_search']");
+    private final By addToCartBtnLocator = By.xpath("//div[@class='productinfo text-center']//a[text()='Add to cart']");
+    private final By titleLocator = By.xpath("//h2[contains(@class,'title')]");
 
     /**
      * Переход на страницу деталей товара по индексу
@@ -31,7 +31,7 @@ public class ProductsPage extends BasePage {
      */
     @Step("Нажать кнопку 'View Product' для товара с индексом {productIndex}")
     public ProductDetailsPage clickViewProductByIndex(int productIndex) {
-        List<WebElement> products = DriverSingleton.getDriver().findElements(viewProductBtn);
+        List<WebElement> products = DriverSingleton.getDriver().findElements(viewProductBtnLocator);
         if (products.size() > productIndex) {
             products.get(productIndex).click();
         }
@@ -44,7 +44,7 @@ public class ProductsPage extends BasePage {
      */
     @Step("Добавить товар с индексом {productIndex} в корзину")
     public void clickAddToCartBtn(int productIndex) {
-        List<WebElement> products = DriverSingleton.getDriver().findElements(addToCartBtn);
+        List<WebElement> products = DriverSingleton.getDriver().findElements(addToCartBtnLocator);
         if (products.size() > productIndex) {
             products.get(productIndex).click();
         }
@@ -56,10 +56,10 @@ public class ProductsPage extends BasePage {
      */
     @Step("Выполнить поиск товара по тексту: '{searchText}'")
     public void searchWithClear(String searchText) {
-        WebElement searchInput = DriverSingleton.getDriver().findElement(searchField);
+        WebElement searchInput = DriverSingleton.getDriver().findElement(searchFieldLocator);
         searchInput.clear();
         searchInput.sendKeys(searchText);
-        DriverSingleton.getDriver().findElement(searchButton).click();
+        DriverSingleton.getDriver().findElement(searchButtonLocator).click();
     }
 
     /**
@@ -68,7 +68,7 @@ public class ProductsPage extends BasePage {
      */
     @Step("Получить список всех названий продуктов")
     public List<String> getAllProductNames() {
-        List<WebElement> productElements = DriverSingleton.getDriver().findElements(productNames);
+        List<WebElement> productElements = DriverSingleton.getDriver().findElements(productNamesLocator);
         List<String> names = new ArrayList<>();
 
         for (WebElement element : productElements) {
@@ -102,7 +102,7 @@ public class ProductsPage extends BasePage {
      */
     @Step("Получить количество продуктов на странице")
     public int getProductsCount() {
-        return DriverSingleton.getDriver().findElements(productNames).size();
+        return DriverSingleton.getDriver().findElements(productNamesLocator).size();
     }
 
     /**
@@ -138,6 +138,8 @@ public class ProductsPage extends BasePage {
      */
     @Step("Проверить, что текущая страница является страницей категории")
     public boolean isCategoryPage() {
-        return driver.getCurrentUrl().contains("/category_products/");
+        String currentUrl = driver.getCurrentUrl();
+        return currentUrl != null && currentUrl.contains("/category_products/");
     }
+
 }

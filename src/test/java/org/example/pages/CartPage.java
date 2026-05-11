@@ -1,12 +1,12 @@
 package org.example.pages;
 
 import org.example.DriverSingleton;
+import org.example.utils.TableHelper;
 import org.example.utils.WaitHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.qameta.allure.Step;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -16,26 +16,32 @@ import java.util.List;
  */
 public class CartPage extends BasePage {
 
+    private final TableHelper tableHelper;
+
     // Локаторы для элементов корзины
-    private By cartRows = By.xpath("//tbody/tr");
-    private By productName = By.xpath(".//td[@class='cart_description']/h4/a");
-    private By productPrice = By.xpath(".//td[@class='cart_price']/p");
-    private By productQuantity = By.xpath(".//td[@class='cart_quantity']/button");
-    private By productTotal = By.xpath(".//td[@class='cart_total']/p");
-    private By deleteProduct = By.xpath(".//td[@class='cart_delete']/a");
+    private final By cartRowsLocator = By.xpath("//tbody/tr");
+    private final By productNameLocator = By.xpath(".//td[@class='cart_description']/h4/a");
+    private final By productPriceLocator = By.xpath(".//td[@class='cart_price']/p");
+    private final By productQuantityLocator = By.xpath(".//td[@class='cart_quantity']/button");
+    private final By productTotalLocator = By.xpath(".//td[@class='cart_total']/p");
+    private final By deleteProductLocator = By.xpath(".//td[@class='cart_delete']/a");
 
     // Иные локаторы
-    private By proceedToCheckoutBtn = By.xpath("//a[text()='Proceed To Checkout']");
-    private By emptyCartMessage = By.xpath("//span[@id='empty_cart']//b");
+    private final By proceedToCheckoutBtnLocator = By.xpath("//a[text()='Proceed To Checkout']");
+    private final By cartEmptyMsgLocator = By.xpath("//span[@id='empty_cart']//b");
+
+    public CartPage() {
+        this.tableHelper = new TableHelper(DriverSingleton.getDriver(), cartRowsLocator);
+    }
 
     /**
      * Класс для хранения данных о товаре в корзине
      */
     public static class CartItem {
-        private String name;
-        private int price;
-        private int quantity;
-        private int total;
+        private final String name;
+        private final int price;
+        private final int quantity;
+        private final int total;
 
         public CartItem(String name, int price, int quantity, int total) {
             this.name = name;
@@ -71,21 +77,13 @@ public class CartPage extends BasePage {
      */
     @Step("Получить все товары из корзины")
     public List<CartItem> getAllCartItems() {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-        List<CartItem> items = new ArrayList<>();
-
-        for (WebElement row : rows) {
-            String name = row.findElement(productName).getText();
-
-            // Извлекаем числовые значения из текста
-            int price = extractPrice(row.findElement(productPrice).getText());
-            int quantity = extractQuantity(row.findElement(productQuantity).getText());
-            int total = extractPrice(row.findElement(productTotal).getText());
-
-            items.add(new CartItem(name, price, quantity, total));
-        }
-
-        return items;
+        return tableHelper.parseTable(row -> {
+            String name = tableHelper.getCellText(row, productNameLocator);
+            int price = extractPrice(tableHelper.getCellText(row, productPriceLocator));
+            int quantity = Integer.parseInt(tableHelper.getCellText(row, productQuantityLocator).trim());
+            int total = extractPrice(tableHelper.getCellText(row, productTotalLocator));
+            return new CartItem(name, price, quantity, total);
+        });
     }
 
     /**
@@ -98,28 +96,14 @@ public class CartPage extends BasePage {
     }
 
     /**
-     * Вспомогательный метод для извлечения количества из строки
-     * @param quantityText текст с количеством
-     * @return числовое значение количества
-     */
-    private int extractQuantity(String quantityText) {
-        return Integer.parseInt(quantityText.trim());
-    }
-
-    /**
      * Проверка, что товар с определённым именем есть в корзине
      * @param productName имя товара
      * @return true если товар найден, false если нет
      */
     @Step("Проверить наличие товара '{productName}' в корзине")
     public boolean isProductInCart(String productName) {
-        List<CartItem> items = getAllCartItems();
-        for (CartItem item : items) {
-            if (item.getName().equalsIgnoreCase(productName)) {
-                return true;
-            }
-        }
-        return false;
+        return getAllCartItems().stream()
+                .anyMatch(item -> item.getName().equalsIgnoreCase(productName));
     }
 
     /**
@@ -160,7 +144,7 @@ public class CartPage extends BasePage {
      */
     @Step("Получить количество товаров в корзине")
     public int getCartItemCount() {
-        return DriverSingleton.getDriver().findElements(cartRows).size();
+        return tableHelper.getRowCount();
     }
 
     /**
@@ -185,19 +169,15 @@ public class CartPage extends BasePage {
      */
     @Step("Проверить отображение цены, количества и итога для товара #{rowIndex}")
     public boolean arePriceQuantityTotalDisplayed(int rowIndex) {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-
-        if (rows.size() <= rowIndex) {
+        try {
+            WebElement row = tableHelper.getRow(rowIndex);
+            return tableHelper.areCellsDisplayed(row,
+                    productPriceLocator,
+                    productQuantityLocator,
+                    productTotalLocator);
+        } catch (RuntimeException e) {
             return false;
         }
-
-        WebElement row = rows.get(rowIndex);
-
-        boolean priceDisplayed = isElementDisplayedInRow(row, productPrice);
-        boolean quantityDisplayed = isElementDisplayedInRow(row, productQuantity);
-        boolean totalDisplayed = isElementDisplayedInRow(row, productTotal);
-
-        return priceDisplayed && quantityDisplayed && totalDisplayed;
     }
 
     /**
@@ -206,26 +186,15 @@ public class CartPage extends BasePage {
      */
     @Step("Проверить отображение цены, количества и итога для всех товаров в корзине")
     public boolean allPricesQuantityTotalsDisplayed() {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-
-        if (rows.isEmpty()) {
+        if (tableHelper.getRowCount() == 0) {
             System.out.println("Корзина пуста");
             return false;
         }
 
-        for (int i = 0; i < rows.size(); i++) {
-            WebElement row = rows.get(i);
-
-            boolean priceDisplayed = isElementDisplayedInRow(row, productPrice);
-            boolean quantityDisplayed = isElementDisplayedInRow(row, productQuantity);
-            boolean totalDisplayed = isElementDisplayedInRow(row, productTotal);
-
-            if (!priceDisplayed || !quantityDisplayed || !totalDisplayed) {
-                System.out.println("Проблема в товаре #" + (i + 1));
-                return false;
-            }
-        }
-        return true;
+        return tableHelper.areCellsDisplayedInAllRows(
+                productPriceLocator,
+                productQuantityLocator,
+                productTotalLocator);
     }
 
     /**
@@ -235,15 +204,11 @@ public class CartPage extends BasePage {
      */
     @Step("Получить количество товара в строке #{rowIndex}")
     public int getQuantityByRowIndex(int rowIndex) {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-
-        if (rows.size() <= rowIndex) {
-            throw new RuntimeException("Строка с индексом " + rowIndex + " не существует");
+        if (tableHelper.getRowCount() <= rowIndex) {
+            throw new RuntimeException("Row with index " + rowIndex + " is not exist");
         }
-
-        WebElement row = rows.get(rowIndex);
-        String quantityText = row.findElement(productQuantity).getText();
-        return extractQuantity(quantityText);
+        String quantityText = tableHelper.getCellValue(rowIndex, productQuantityLocator);
+        return Integer.parseInt(quantityText.trim());
     }
 
     /**
@@ -252,7 +217,7 @@ public class CartPage extends BasePage {
      */
     @Step("Нажать кнопку 'Proceed To Checkout'")
     public CheckOutPage clickProceedToCheckoutBtn() {
-        click(proceedToCheckoutBtn);
+        click(proceedToCheckoutBtnLocator);
         return new CheckOutPage();
     }
 
@@ -262,15 +227,7 @@ public class CartPage extends BasePage {
      */
     @Step("Удалить товар из строки #{rowIndex}")
     public void deleteProductByRowIndex(int rowIndex) {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-
-        if (rows.size() > rowIndex) {
-            WebElement row = rows.get(rowIndex);
-            WebElement deleteBtn = row.findElement(deleteProduct);
-            deleteBtn.click();
-        } else {
-            throw new RuntimeException("Строка с индексом " + rowIndex + " не существует");
-        }
+        tableHelper.deleteRow(rowIndex, deleteProductLocator);
     }
 
     /**
@@ -278,14 +235,7 @@ public class CartPage extends BasePage {
      */
     @Step("Удалить все товары из корзины")
     public void deleteAllProducts() {
-        List<WebElement> rows = DriverSingleton.getDriver().findElements(cartRows);
-
-        for (WebElement row : rows) {
-            WebElement deleteBtn = row.findElement(deleteProduct);
-            deleteBtn.click();
-            WaitHelper.waitForPageLoad();
-            rows = DriverSingleton.getDriver().findElements(cartRows);
-        }
+        tableHelper.deleteAllRows(deleteProductLocator, WaitHelper::waitForPageLoad);
     }
 
     /**
@@ -294,7 +244,7 @@ public class CartPage extends BasePage {
      */
     @Step("Проверить, пуста ли корзина")
     public boolean isCartEmpty() {
-        return isDisplayed(emptyCartMessage);
+        return isDisplayed(cartEmptyMsgLocator);
     }
 
     /**
@@ -310,7 +260,7 @@ public class CartPage extends BasePage {
      * @return локатор emptyCartMessage
      */
     public By getEmptyCartMessage() {
-        WaitHelper.waitForElementVisible(emptyCartMessage);
-        return emptyCartMessage;
+        WaitHelper.waitForElementVisible(cartEmptyMsgLocator);
+        return cartEmptyMsgLocator;
     }
 }

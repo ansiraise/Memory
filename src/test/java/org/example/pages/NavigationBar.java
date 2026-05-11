@@ -12,18 +12,18 @@ import org.openqa.selenium.By;
  */
 public class NavigationBar extends BasePage {
 
-    private By homeBtn = By.xpath("//a[contains(.,'Home')]");
-    private By productsBtn = By.xpath("//a[contains(.,'Products')]");
-    private By cartBtn = By.xpath("//a[@href='/view_cart']");
-    private By signupLoginBtn = By.xpath("//a[contains(.,'Signup / Login')]");
-    private By contactUsBtn = By.xpath("//a[@href='/contact_us']");
-    private By logoutBtn = By.xpath("//a[@href='/logout']");
-    private By deleteAccountBtn = By.xpath("//a[@href='/delete_account']");
-    private By loggedInAsElement = By.xpath("//a[contains(text(), 'Logged in as')]");
-    private By testCasesBtn = By.xpath("//a[@href='/test_cases']");
-    private By subscriptionBtn = By.xpath("//button[@id='subscribe']");
-    private By subscriptionEmailField = By.xpath("//input[@id='susbscribe_email']");
-    private By alertSubscription = By.xpath("//div[@class='alert-success alert']");
+    private final By homeBtnLocator = By.xpath("//a[contains(.,'Home')]");
+    private final By productsBtnLocator = By.xpath("//a[contains(.,'Products')]");
+    private final By cartBtnLocator = By.xpath("//a[@href='/view_cart']");
+    private final By signupLoginBtnLocator = By.xpath("//a[contains(.,'Signup / Login')]");
+    private final By contactUsBtnLocator = By.xpath("//a[@href='/contact_us']");
+    private final By logoutBtnLocator = By.xpath("//a[@href='/logout']");
+    private final By deleteAccountBtnLocator = By.xpath("//a[@href='/delete_account']");
+    private final By loggedInAsLocator = By.xpath("//a[contains(text(), 'Logged in as')]");
+    private final By testCasesBtnLocator = By.xpath("//a[@href='/test_cases']");
+    private final By subscribeBtnLocator = By.xpath("//button[@id='subscribe']");
+    private final By subscribeEmailFieldLocator = By.xpath("//input[@id='susbscribe_email']");
+    private final By successAlertSubscriptionLocator = By.xpath("//div[@class='alert-success alert']");
 
     /**
      * Клик по кнопке Signup / Login
@@ -31,7 +31,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Signup / Login'")
     public LoginPage clickSignupLoginBtn() {
-        click(signupLoginBtn);
+        click(signupLoginBtnLocator);
         return new LoginPage();
     }
 
@@ -41,7 +41,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Cart'")
     public CartPage clickCartBtn() {
-        click(cartBtn);
+        click(cartBtnLocator);
         return new CartPage();
     }
 
@@ -51,7 +51,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Delete Account'")
     public DeleteAccountPage clickDeleteAccountBtn() {
-        click(deleteAccountBtn);
+        click(deleteAccountBtnLocator);
         return new DeleteAccountPage();
     }
 
@@ -61,7 +61,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Contact Us'")
     public ContactUsPage clickContactUsBtn() {
-        click(contactUsBtn);
+        click(contactUsBtnLocator);
         return new ContactUsPage();
     }
 
@@ -82,7 +82,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Test Cases'")
     public TestCasesPage clickTestCasesBtn() {
-        click(testCasesBtn);
+        click(testCasesBtnLocator);
         return new TestCasesPage();
     }
 
@@ -92,7 +92,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Products'")
     public ProductsPage clickProductsBtn() {
-        click(productsBtn);
+        click(productsBtnLocator);
         return new ProductsPage();
     }
 
@@ -102,7 +102,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Ввести email в поле подписки: {email}")
     public void fillEmailSubscription(String email) {
-        sendKeys(subscriptionEmailField, email);
+        sendKeys(subscribeEmailFieldLocator, email);
     }
 
     /**
@@ -110,7 +110,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку подписки")
     public void clickSubscriptionBtn() {
-        click(subscriptionBtn);
+        click(subscribeBtnLocator);
     }
 
     /**
@@ -119,7 +119,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Получить локатор сообщения об успешной подписке")
     public By getAlertText() {
-        return alertSubscription;
+        return successAlertSubscriptionLocator;
     }
 
     /**

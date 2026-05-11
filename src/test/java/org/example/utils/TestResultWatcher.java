@@ -8,7 +8,7 @@ public class TestResultWatcher implements TestWatcher {
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
-        // Вызываем ваш хелпер, передавая имя упавшего теста
+        // Вызываем ваш помощник, передавая имя упавшего теста
         String testName = context.getDisplayName();
         ScreenshotHelper.captureScreenshot(testName);
     }

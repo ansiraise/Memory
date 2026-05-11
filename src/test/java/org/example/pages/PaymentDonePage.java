@@ -10,10 +10,10 @@ import io.qameta.allure.Step;
  */
 public class PaymentDonePage extends BasePage {
 
-    private By continueBtn = By.xpath("//a[text()='Continue']");
-    private By downloadInvoiceBtn = By.xpath("//a[text()='Download Invoice']");
-    private By congratText = By.xpath("//p[text()='Congratulations! Your order has been confirmed!']");
-    private By orderPlacedText = By.xpath("//b[text()='Order Placed!']");
+    private final By continueBtnLocator = By.xpath("//a[text()='Continue']");
+    private final By downloadInvoiceBtnLocator = By.xpath("//a[text()='Download Invoice']");
+    private final By orderConfirmedMsgLocator = By.xpath("//p[text()='Congratulations! Your order has been confirmed!']");
+    private final By orderPlacedMsgLocator = By.xpath("//b[text()='Order Placed!']");
 
     /**
      * Нажатие кнопки Continue после успешного заказа
@@ -21,17 +21,17 @@ public class PaymentDonePage extends BasePage {
      */
     @Step("Нажать кнопку Continue на странице подтверждения заказа")
     public HomePage clickContinue() {
-        click(continueBtn);
+        click(continueBtnLocator);
         return new HomePage();
     }
 
     /**
      * Получение локатора текста поздравления с успешным заказом
-     * @return локатор congratText
+     * @return локатор congratulationText
      */
     @Step("Получить локатор текста подтверждения заказа")
-    public By getCongratText() {
-        return congratText;
+    public By getOrderConfirmedMsgLocator() {
+        return orderConfirmedMsgLocator;
     }
 
     /**
@@ -49,7 +49,7 @@ public class PaymentDonePage extends BasePage {
      */
     @Step("Скачать инвойс заказа")
     public void downloadInvoice() {
-        click(downloadInvoiceBtn);
+        click(downloadInvoiceBtnLocator);
     }
 
     /**
@@ -57,8 +57,8 @@ public class PaymentDonePage extends BasePage {
      * @return текст "Order Placed!"
      */
     @Step("Получить текст 'Order Placed!'")
-    public String getOrderPlacedText() {
-        return getText(orderPlacedText);
+    public String getOrderPlacedMsgLocator() {
+        return getText(orderPlacedMsgLocator);
     }
 
 
