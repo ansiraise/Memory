@@ -27,11 +27,15 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Run tests and generate Allure report
-        run: mvn clean test allure:report --batch-mode
+      - name: Run tests
+        run: mvn clean test --batch-mode
         env:
           JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8 -Djava.util.logging.config.file=src/test/resources/logging.properties
           MAVEN_OPTS: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+
+      - name: Generate Allure Report
+        run: mvn allure:report
+        if: always()
 
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
@@ -44,7 +48,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         if: always()
         with:
-          github_token: ${{ secrets.PERSONAL_TOKEN }}
-          publish_dir: ./target/site/allure-maven-plugin
-          destination_dir: ./allure-report
-          keep_files: false
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: target/site/allure-maven-plugin
+          destination_dir: allure-report
