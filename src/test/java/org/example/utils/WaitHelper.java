@@ -44,7 +44,7 @@ public class WaitHelper {
     }
 
     public static WebElement waitForElementClickable(By locator) {
-        return getWait(DEFAULT_TIMEOUT)
+        return getWait(LONG_TIMEOUT)
                 .until(ExpectedConditions.elementToBeClickable(locator));
     }
 

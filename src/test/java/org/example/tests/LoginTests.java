@@ -35,7 +35,7 @@ public class LoginTests {
 
     @AfterEach
     void tearDown() {
-        //DriverSingleton.quitDriver();
+        DriverSingleton.quitDriver();
     }
 
     @Test

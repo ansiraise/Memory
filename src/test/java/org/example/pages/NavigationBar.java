@@ -32,7 +32,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Signup / Login'")
     public LoginPage clickSignupLoginBtn() {
-        WaitHelper.waitForElementVisible(signupLoginBtnLocator).click();
+        WaitHelper.waitForElementClickable(signupLoginBtnLocator).click();
         return new LoginPage();
     }
 
