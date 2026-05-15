@@ -31,6 +31,7 @@ public class DriverSingleton {
                 options.addArguments("--disable-gpu");
             }
 
+            options.addArguments("--lang=en-US");                        // устанавливаем английский язык интерфейса
             //позиция и размер окна
             options.addArguments("--window-position=0,0");
             //options.addArguments("--start-maximized");                   // устанавливает размер окна

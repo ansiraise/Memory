@@ -51,3 +51,5 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: target/site/allure-maven-plugin
           destination_dir: allure-report
+          # keep_files: false # Раскомментируйте, чтобы удалять старые отчеты и экономить место
+          keep_files: true   # Сейчас включено, чтобы сохранять историю тестов

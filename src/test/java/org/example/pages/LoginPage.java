@@ -3,6 +3,7 @@ package org.example.pages;
 import io.qameta.allure.Step;
 import org.example.utils.WaitHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class LoginPage extends BasePage {
 
@@ -16,10 +17,6 @@ public class LoginPage extends BasePage {
     private final By errorSignupLocator = By.xpath("//p[text()='Email Address already exist!']");
 
 
-
-    // LoginPage.java
-// Страница логина и регистрации
-
     /**
      * Ввод email в поле авторизации
      * @param email email пользователя
@@ -28,6 +25,15 @@ public class LoginPage extends BasePage {
     public void enterEmail(String email) {
         sendKeys(emailLoginFieldLocator, email);
     }
+
+    /**
+     * Get emailField attribute
+     */
+    @Step("Get emailField attribute")
+    public String getEmailValidationMessage() {
+        return getAttribute(emailLoginFieldLocator, "validationMessage");
+    }
+
 
     /**
      * Ввод пароля в поле авторизации
@@ -135,5 +141,7 @@ public class LoginPage extends BasePage {
     public String getCredsExistText() {
         return "Email Address already exist!";
     }
+
+
 
 }

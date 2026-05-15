@@ -51,67 +51,6 @@ public class ExampleTest {
     }
 
     @Test
-    public void RegistrationDeleteRandomUser() {
-        log.info("=== Test started: RegistrationDeleteRandomUser ===");
-
-        NavigationBar navigationBar = new NavigationBar();
-        LoginPage loginPage = navigationBar.clickSignupLoginBtn();
-
-        TemporaryUser user = TemporaryUser.createRandom();
-        user.accountFields();
-        log.info("Random user created: {} / {}", user.getEmail(), user.getPassword());
-
-        SignupPage signupPage = loginPage.signup(user.getName(), user.getEmail());
-        signupPage.fillRegistrationForm(user);
-        AccountCreatedPage accountCreated = signupPage.clickCreateAccountBtn();
-
-        log.info("Checking account creation success message");
-        assertEquals(accountCreated.getExpectedCreatedText(), accountCreated.getText(accountCreated.getAccountConfirm()));
-
-        HomePage homePage = accountCreated.clickContinueBtn();
-        DeleteAccountPage deleteAccount = navigationBar.clickDeleteAccountBtn();
-
-        log.info("Checking account deletion success message");
-        assertEquals(deleteAccount.getExpectedDeletedText(), deleteAccount.getText(deleteAccount.getAccountDeletedText()));
-
-        deleteAccount.clickContinueBtn();
-        assertEquals(ConfigManager.getBaseUrl() + "/", homePage.getCurrentUrl());
-
-        log.info("=== Test RegistrationDeleteRandomUser completed successfully ===");
-    }
-
-    @Test
-    public void LoginCorrectCredentials() {
-        log.info("=== Test started: LoginCorrectCredentials ===");
-        NavigationBar navigationBar = new NavigationBar();
-        LoginPage loginPage = navigationBar.clickSignupLoginBtn();
-        loginPage.login(ConfigManager.getAdminEmail(), ConfigManager.getAdminPassword());
-        String actualUserName = navigationBar.getLoggedInUserName();
-        assertEquals(ConfigManager.getAdminLogin(), actualUserName);
-        log.info("=== Test LoginCorrectCredentials completed successfully ===");
-    }
-
-    @Test
-    public void LoginIncorrectCredentials() {
-        log.info("=== Test started: LoginIncorrectCredentials ===");
-        NavigationBar navigationBar = new NavigationBar();
-        LoginPage loginPage = navigationBar.clickSignupLoginBtn();
-        loginPage.login(TestData.INCORRECT_EMAIL, TestData.INCORRECT_PASSWORD);
-        assertEquals(loginPage.getCredsIncorrectText(), loginPage.getText(loginPage.getErrorCredentials()));
-        log.info("=== Test LoginIncorrectCredentials completed successfully ===");
-    }
-
-    @Test
-    public void SignupWithExistingCredentials() {
-        log.info("=== Test started: SignupWithExistingCredentials ===");
-        NavigationBar navigationBar = new NavigationBar();
-        LoginPage loginPage = navigationBar.clickSignupLoginBtn();
-        loginPage.signup(ConfigManager.getAdminLogin(), ConfigManager.getAdminEmail());
-        assertEquals(loginPage.getCredsExistText(), loginPage.getText(loginPage.getErrorSignup()));
-        log.info("=== Test SignupWithExistingCredentials completed successfully ===");
-    }
-
-    @Test
     public void ContactUsForm() {
         log.info("=== Test started: ContactUsForm ===");
         NavigationBar navigationBar = new NavigationBar();

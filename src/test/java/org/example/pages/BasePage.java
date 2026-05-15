@@ -38,7 +38,7 @@ public abstract class BasePage {
      * @param text вводимый текст
      */
     @Step("Ввести текст '{text}' в поле {locator}")
-    public void sendKeys(By locator, String text) {
+    protected void sendKeys(By locator, String text) {
         driver.findElement(locator).sendKeys(text);
     }
 
@@ -47,8 +47,17 @@ public abstract class BasePage {
      * @param locator локатор элемента
      */
     @Step("Кликнуть по элементу {locator}")
-    public void click(By locator) {
+    protected void click(By locator) {
         driver.findElement(locator).click();
+    }
+
+    /**
+     * Получение аттрибута элемента
+     * @param locator локатор элемента
+     */
+    @Step("Получить аттрибут элемента по {locator} и {attributeName}")
+    public String getAttribute(By locator, String attributeName) {
+        return WaitHelper.waitForElementVisible(locator).getAttribute(attributeName);
     }
 
     /**
@@ -66,7 +75,7 @@ public abstract class BasePage {
      * @param locator локатор элемента
      */
     @Step("Скролл к элементу {locator} и клик (JavaScript)")
-    public void clickWithJs(By locator) {
+    protected void clickWithJs(By locator) {
         WebElement element = driver.findElement(locator);
         ((JavascriptExecutor) driver).executeScript(
                 "arguments[0].scrollIntoView({block: 'center', inline: 'nearest'});",
