@@ -7,13 +7,14 @@ public class TestData {
         public static final String VALID_PASSWORD = "valid123";
 
         // Невалидные
+        public static final String WRONG_EMAIL = "wrong123@test.com";
         public static final String INCORRECT_EMAIL = "wrong123";
         public static final String EMPTY_EMAIL = "";
         public static final String EMPTY_PASSWORD = "";
         public static final String SINGLE_SPACE = " ";
 
         public static final String LONG_NAME = "ThisIsAVeryLongNameThatExceedsNormalLength";
-        public static final int MIN_PASSWORD_LENGTH = 123;
+        public static final String MIN_PASSWORD_LENGTH = "abc";
         public static final long MAX_PASSWORD_LENGTH = 12345678901654613L;
 
 

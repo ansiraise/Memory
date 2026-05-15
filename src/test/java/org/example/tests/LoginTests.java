@@ -35,7 +35,7 @@ public class LoginTests {
 
     @AfterEach
     void tearDown() {
-        DriverSingleton.quitDriver();
+        //DriverSingleton.quitDriver();
     }
 
     @Test
@@ -54,7 +54,7 @@ public class LoginTests {
         log.info("=== Test started: LoginIncorrectCredentials ===");
         NavigationBar navigationBar = new NavigationBar();
         LoginPage loginPage = navigationBar.clickSignupLoginBtn();
-        loginPage.login(TestData.INCORRECT_EMAIL, TestData.INCORRECT_EMAIL);
+        loginPage.login(TestData.WRONG_EMAIL, TestData.MIN_PASSWORD_LENGTH);
         assertEquals(loginPage.getCredsIncorrectText(), loginPage.getText(loginPage.getErrorCredentials()));
         log.info("=== Test LoginIncorrectCredentials completed successfully ===");
     }
