@@ -2,6 +2,7 @@ package org.example.pages;
 
 import io.qameta.allure.Step;
 import org.example.DriverSingleton;
+import org.example.utils.WaitHelper;
 import org.openqa.selenium.By;
 
 /**
@@ -15,7 +16,7 @@ public class NavigationBar extends BasePage {
     private final By homeBtnLocator = By.xpath("//a[contains(.,'Home')]");
     private final By productsBtnLocator = By.xpath("//a[contains(.,'Products')]");
     private final By cartBtnLocator = By.xpath("//a[@href='/view_cart']");
-    private final By signupLoginBtnLocator = By.xpath("//a[contains(.,'Signup / Login')]");
+    private final By signupLoginBtnLocator = By.xpath("//a[@href='/login']");
     private final By contactUsBtnLocator = By.xpath("//a[@href='/contact_us']");
     private final By logoutBtnLocator = By.xpath("//a[@href='/logout']");
     private final By deleteAccountBtnLocator = By.xpath("//a[@href='/delete_account']");
@@ -31,7 +32,7 @@ public class NavigationBar extends BasePage {
      */
     @Step("Нажать кнопку 'Signup / Login'")
     public LoginPage clickSignupLoginBtn() {
-        click(signupLoginBtnLocator);
+        WaitHelper.waitForElementVisible(signupLoginBtnLocator).click();
         return new LoginPage();
     }
 
